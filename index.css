@@ -1,0 +1,65 @@
+/* Color palette:
+https://coolors.co/31544d-62725a-97935f-b8b69a-080357
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #31544d;
+}
+
+#treemap.graph-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #b8b69a;
+}
+#treemap.graph-container > .graph-title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+#treemap.graph-container > .graph {
+  width: 1000px;
+  aspect-ratio: 16/9;
+  border: 1px solid #62725a;
+  border-radius: 5px;
+}
+#treemap.graph-container > .graph-legend {
+  margin-top: 5px;
+}
+#treemap.graph-container > #tooltip {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  padding: 5px;
+  background-color: #d9fff8;
+  border: 2px solid #080357;
+  border-radius: 5px;
+  pointer-events: none;
+}
+#treemap.graph-container > #tooltip > p {
+  font-size: 12px;
+}
+
+.tile-container > .tile-text > .label {
+  font-size: 10px;
+  overflow-wrap: break-word;
+  pointer-events: none;
+}

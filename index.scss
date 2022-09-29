@@ -1,0 +1,89 @@
+/* Color palette:
+https://coolors.co/31544d-62725a-97935f-b8b69a-080357
+*/
+
+//Constants
+$page-background-color: #31544d;
+$graph-container-background-color: #b8b69a;
+$graph-border-color: #62725a;
+$tooltip-background-color: #d9fff8;
+$tooltip-border-color: #080357;
+
+//Mixins
+@mixin flex-row {
+  display: flex;
+}
+
+@mixin flex-row-center {
+  @include flex-row;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-column-center {
+  @include flex-column;
+  justify-content: center;
+  align-items: center;
+}
+
+//Default styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+//Styles
+body {
+  @include flex-column-center;
+  width: 100vw;
+  height: 100vh;
+  background-color: $page-background-color;
+}
+
+#treemap.graph-container {
+  @include flex-column-center;
+  padding: 20px;
+  background-color: $graph-container-background-color;
+  > .graph-title-container {
+    @include flex-column-center;
+    margin-bottom: 10px;
+  }
+  > .graph {
+    width: 1000px;
+    aspect-ratio: 16/9;
+    border: 1px solid $graph-border-color;
+    border-radius: 5px;
+  }
+  > .graph-legend {
+    margin-top: 5px;
+  }
+  > #tooltip {
+    @include flex-column-center;
+    position: absolute;
+    padding: 5px;
+    background-color: $tooltip-background-color;
+    border: 2px solid $tooltip-border-color;
+    border-radius: 5px;
+    pointer-events: none;
+    > p {
+      font-size: 12px;
+    }
+  }
+}
+
+.tile-container {
+  > .tile-text {
+    > .label {
+      font-size: 10px;
+      overflow-wrap: break-word;
+      pointer-events: none;
+    }
+  }
+}
